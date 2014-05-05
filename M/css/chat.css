@@ -1,4 +1,10 @@
 @CHARSET "UTF-8";
+
+.chat-container {
+	float: left;	
+	padding: 10px;
+}
+
 .chat-title-space {
 	padding-bottom: 5px;
 }

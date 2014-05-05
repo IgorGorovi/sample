@@ -18,6 +18,7 @@ The conversation should scroll down as it is typed new messages stream in or you
 
 Known Issues: 
 1. After you type the first chat text in your own text box and press enter then text area seems to keep it even after I clear using .val(‘’) in Jquery. I am not sure why that is the case but I have let it be in this version as it did not seem to be a big concern. 
+2. There will be a slight increase in the chat window until about the scroll can kick in. I think min-height needs to be adjusted. 
 
 Future Task:
 1. There are lot of todos marked in the code as FUTURE WORK. Those are good examples / candidates for improvement. 
@@ -28,5 +29,4 @@ This implementation uses
 1. jQuery
 2. signals
 Both of them can be found under pwd{chats.html}/lib/
-
 

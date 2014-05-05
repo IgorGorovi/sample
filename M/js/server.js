@@ -23,11 +23,11 @@ var Server = function() {
 		 *NETWORK happens to be our network bus and a common namespace
 		 *bad practice probably but might server the requirement of this demo
 		 */		 
-		 NETWORK.protocol_1_2.client.dispatch({op: 'initConversation',payload: {chatterAvatar:activeUsers[1].avatar, chattedAvatar:activeUsers[2].avatar, chattedHandle: activeUsers[2].handle}})
-		//#NETWORK.protocol_1_3.client.dipatch({op: 'initConversation',payload: {chatterAvatar:activeUsers[1].avatar, chattedAvatar:activeUsers[3].avatar, chattedHandle: activeUsers[3].handle}});
+		NETWORK.protocol_1_2.client.dispatch({op: 'initConversation',payload: {chatterAvatar:activeUsers[1].avatar, chattedAvatar:activeUsers[2].avatar, chattedHandle: activeUsers[2].handle}})
+		NETWORK.protocol_1_3.client.dispatch({op: 'initConversation',payload: {chatterAvatar:activeUsers[1].avatar, chattedAvatar:activeUsers[3].avatar, chattedHandle: activeUsers[3].handle}});
 		//And, this is a conversation between 1 and 2, 1 and 3
 		 activeChats['1']['2'] = NETWORK.protocol_1_2.client;
-		//#ctiveChats['1']['3'] = NETWORK.protocol_1_3.client;	 
+		 activeChats['1']['3'] = NETWORK.protocol_1_3.client;	 
 	 };	
 	//client manager - manages clients 
 	this.run = function() {

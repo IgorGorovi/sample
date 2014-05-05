@@ -18,10 +18,10 @@ var NETWORK = {};
 
 $(document).ready(function(){
 	NETWORK.protocol_1_2 = new Protocol();
-	//#NETWORK.protocol_1_3 = new Protocol();
+	NETWORK.protocol_1_3 = new Protocol();
 	//start client windows
 	var c1 = new ChatClient('CW1', NETWORK.protocol_1_2); //CW1 = chat window 1, div id;
-	//#var c2 = new ChatClient('CW2',NETWORK.protocol_1_2); //CW1 = chat window 1, div id;
+	var c2 = new ChatClient('CW2',NETWORK.protocol_1_3); //CW1 = chat window 1, div id;
 	var s = new Server();
 	s.initEnv();
 	s.run();
@@ -30,7 +30,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div id="CW1"> </div>
-<!--<div id="CW2"></div>-->
+<div class="chat-container" id="CW1"> </div>
+<div class="chat-container" id="CW2"> </div>
 </body>
 </html>
