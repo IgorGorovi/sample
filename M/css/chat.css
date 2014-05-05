@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+.chat-title-space {
+	padding-bottom: 5px;
+}
+.chat-window {
+	width: 250px; /* these should be configurable js and through config file */
+	border: 2px solid grey;
+}
+
+ul.chat-title {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+
+.chat-title li {
+    padding: 5px;
+}
+
+ul.chat {
+	clear: both;
+	list-style: none;
+	padding: 4px;
+}
+li.chat-image {
+	float: left;
+	height: 40px; /* ideally configurable */
+	width: 40px;  /* " */	
+}
+li.chat-text {
+	padding-left: 50px;
+}
+.chat-entry textarea {
+	display: block;
+	margin: 5px auto;
+	width: 95%;
+	height: 75px;
+	overflow: scroll;
+}
+.c1 {
+	background-color: orange;
+}
+.c2 {
+	background-color: #3399FF;
+}
+
+.chat-conversation {
+	max-height: 130px;
+	overflow: scroll;
+}

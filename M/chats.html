@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chat JS</title>
+<link href="css/chat.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"> </script>
+<!-- should actually be using AMD requirejs system here  -->
+<!--  <script src="js/helpers.js"> </script> -->
+<script src="js/lib/signals.js"> </script>    
+<script src="js/protocol.js"> </script> 
+<script src="js/view.js"> </script>
+<script src="js/server.js"> </script>
+<script src="js/client.js"> </script>
+<script>
+//MAIN
+var NETWORK = {};
+
+$(document).ready(function(){
+	NETWORK.protocol_1_2 = new Protocol();
+	//#NETWORK.protocol_1_3 = new Protocol();
+	//start client windows
+	var c1 = new ChatClient('CW1', NETWORK.protocol_1_2); //CW1 = chat window 1, div id;
+	//#var c2 = new ChatClient('CW2',NETWORK.protocol_1_2); //CW1 = chat window 1, div id;
+	var s = new Server();
+	s.initEnv();
+	s.run();
+	//var conversation13 = new ChatClient('CW2',NETWORK.protocol_1_3);
+});
+</script>
+</head>
+<body>
+<div id="CW1"> </div>
+<!--<div id="CW2"></div>-->
+</body>
+</html>
