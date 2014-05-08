@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Autocomplete form</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"> </script>
+<script src="Assets/ac.js"></script>
+<link rel="stylesheet" type="text/css" href="Assets/style.css" ></link>
+
+<script> 
+$(document).ready(function() {
+	var C = new Controller();
+	C.run ();
+});
+</script>
+</head>
+<body>
+<article class="main-view"> 
+	<div>
+		<input id="input-box" />
+		<button id="#button">Search</button>
+	</div>
+	<ul id="auto-complete"></ul>
+</article>
+ 
+
+</body>
+</html>

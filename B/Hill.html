@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Game of Strings</title>
+<script> 
+
+var SS = function(str) {
+	if(typeof str != 'string') {
+		console.log('cannot perform operation');
+		return false;
+	}
+	var front = 0; // at the first letter
+	var sublength = 1;
+	var result = [];
+	this.print = function() {
+		var st; 
+		while(front<str.length) {						
+			if(sublength <= str.length) {
+				st = str.substr(front,sublength); //js built-in
+				sublength++;
+			}
+			else {
+				front++;
+				st = str.substr(front);				
+			}
+			if(front != str.length) { //liked it here
+				result.push(st);
+			}
+		}
+		console.log(result); //to see the result
+		return result;
+	};
+}
+var s = new SS("triangle");
+var res = s.print(); //print is your function which will output an array;
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

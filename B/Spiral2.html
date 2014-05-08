@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.com #1</title>
+</head>
+<script> 
+
+var Cursor = function(dim) {
+	//.turns
+	var DIM = dim;
+	var _turn = 0;
+	var path = [true]; //already at 0,0
+	var position = {
+		r: 0, c: 0	
+	};
+	this.turn = function() {
+		_turn = (_turn+1)%4;	
+	};
+	this.move = function(){
+		var moved = false;
+		switch(_turn) {
+		case 0:
+			if(((position.c+1) != DIM) && !visited({r:position.r,c:(position.c + 1)})) {
+				position.c++;
+				moved = true;
+			}
+			break;
+		case 1: 
+			if(((position.r+1) != DIM) && !visited({r:(position.r+1),c:position.c})) {
+				position.r++;
+				moved = true;
+			}
+			break;
+		case 2: 
+			if(((position.c-1) != -1) && !visited({r:position.r,c:(position.c-1)})) {
+				position.c--;
+				moved = true;
+			}
+			break;
+		case 3:
+			if(((position.r -1) != -1) && !visited({r:(position.r-1),c:position.c})) {
+				position.r--;
+				moved = true;
+			}
+		}
+		if(moved) {
+			leaveTrail(position);
+		}
+		return moved;
+	};
+	
+	var visited = function (pos) {
+		var c = pos.r*DIM+pos.c;
+		return path[c];	
+	};
+	
+	var leaveTrail = function (pos) {
+		var c = pos.r*DIM+pos.c;
+		path[c] = true;
+	};
+	
+	this.printPosition = function() {
+		//.c - x axis
+		//.r - y axis
+		document.write('('+position.c+','+position.r+')<br/>');		
+	};	
+	
+};
+
+function spiral(dim) {
+	var cur = new Cursor(dim);
+	cur.printPosition();	//first position
+	var stalemate = 0;
+	while(stalemate < 2) {
+		if(!cur.move()) {
+			cur.turn();
+			stalemate++;		
+		}
+		else {
+			stalemate = 0; //because I moved
+			cur.printPosition();				
+		}
+	}
+}
+spiral(3); // required call
+
+
+</script>
+<body>
+
+</body>
+</html>
